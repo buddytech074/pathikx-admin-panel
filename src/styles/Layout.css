@@ -1,0 +1,19 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 260px;
+    /* Sidebar Width */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-body);
+}
+
+.content-area {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
