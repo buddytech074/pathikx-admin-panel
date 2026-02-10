@@ -1,5 +1,5 @@
 import axios from 'axios';
-const isProd = false;
+const isProd = true;
 // Base URL configuration (Update with your actual backend URL)
 const API_URL = isProd ? 'https://pathikx.net' : 'http://localhost:8080';
 
