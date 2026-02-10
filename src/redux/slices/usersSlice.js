@@ -5,7 +5,7 @@ export const fetchUsers = createAsyncThunk(
     'users/fetchAll',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await api.get('/admin/users');
+            const response = await api.get('/api/admin/users');
             return response.data.data;
         } catch (error) {
             return rejectWithValue(error.response?.data?.message || 'Failed to fetch users');
@@ -17,7 +17,7 @@ export const blockUser = createAsyncThunk(
     'users/block',
     async (id, { rejectWithValue }) => {
         try {
-            await api.post(`/admin/users/${id}/block`);
+            await api.post(`/api/admin/users/${id}/block`);
             return id;
         } catch (error) {
             return rejectWithValue(error.response?.data?.message || 'Failed to block user');

@@ -5,7 +5,7 @@ export const fetchPendingDrivers = createAsyncThunk(
     'drivers/fetchPending',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await api.get('/admin/drivers/pending');
+            const response = await api.get('/api/admin/drivers/pending');
             return response.data.data;
         } catch (error) {
             return rejectWithValue(error.response?.data?.message || 'Failed to fetch pending drivers');
@@ -17,7 +17,7 @@ export const verifyDriver = createAsyncThunk(
     'drivers/verify',
     async (id, { rejectWithValue }) => {
         try {
-            const response = await api.post(`/admin/drivers/${id}/verify`);
+            const response = await api.post(`/api/admin/drivers/${id}/verify`);
             return response.data.data;
         } catch (error) {
             return rejectWithValue(error.response?.data?.message || 'Failed to verify driver');

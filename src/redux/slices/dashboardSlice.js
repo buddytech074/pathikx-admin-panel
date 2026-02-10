@@ -6,7 +6,7 @@ export const fetchStats = createAsyncThunk(
     'dashboard/fetchStats',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await api.get('/admin/stats');
+            const response = await api.get('/api/admin/stats');
             return response.data.data;
         } catch (error) {
             return rejectWithValue(error.response?.data?.message || 'Failed to fetch stats');

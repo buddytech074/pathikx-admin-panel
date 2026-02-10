@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../services/api';
 import './PricingConfig.css';
-
-const API_BASE_URL = 'http://localhost:8080/api';
 
 const PricingConfig = () => {
     const [configs, setConfigs] = useState([]);
@@ -26,7 +24,7 @@ const PricingConfig = () => {
     const fetchConfigs = async () => {
         try {
             setLoading(true);
-            const response = await axios.get(`${API_BASE_URL}/pricing-config`);
+            const response = await api.get('/api/pricing-config');
             setConfigs(response.data);
         } catch (error) {
             console.error('Error fetching pricing configs:', error);
@@ -56,7 +54,7 @@ const PricingConfig = () => {
                 return;
             }
 
-            await axios.put(`${API_BASE_URL}/pricing-config/${configKey}`, {
+            await api.put(`/api/pricing-config/${configKey}`, {
                 value: numValue
             });
 

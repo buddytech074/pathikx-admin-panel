@@ -5,7 +5,7 @@ export const fetchComplaints = createAsyncThunk(
     'complaints/fetchAll',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await api.get('/admin/complaints');
+            const response = await api.get('/api/admin/complaints');
             return response.data.data;
         } catch (error) {
             return rejectWithValue(error.response?.data?.message || 'Failed to fetch complaints');
@@ -17,7 +17,7 @@ export const resolveComplaint = createAsyncThunk(
     'complaints/resolve',
     async (id, { rejectWithValue }) => {
         try {
-            const response = await api.post(`/admin/complaints/${id}/resolve`);
+            const response = await api.post(`/api/admin/complaints/${id}/resolve`);
             return response.data.data;
         } catch (error) {
             return rejectWithValue(error.response?.data?.message || 'Failed to resolve complaint');

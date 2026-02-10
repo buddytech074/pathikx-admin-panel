@@ -5,7 +5,7 @@ export const fetchBookings = createAsyncThunk(
     'bookings/fetchAll',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await api.get('/admin/bookings');
+            const response = await api.get('/api/admin/bookings');
             return response.data.data;
         } catch (error) {
             return rejectWithValue(error.response?.data?.message || 'Failed to fetch bookings');
