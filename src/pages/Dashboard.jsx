@@ -23,28 +23,28 @@ const Dashboard = () => {
             <div style={{ marginBottom: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
                 <StatsCard
                     title="Total Users"
-                    value={stats.totalUsers}
+                    value={stats?.totalUsers}
                     icon={<Users size={24} />}
                     trend="12%"
                     trendUp={true}
                 />
                 <StatsCard
                     title="Active Drivers"
-                    value={stats.activeDrivers}
+                    value={stats?.activeDrivers}
                     icon={<Car size={24} />}
                     trend="5%"
                     trendUp={true}
                 />
                 <StatsCard
                     title="Total Bookings"
-                    value={stats.totalBookings}
+                    value={stats?.totalBookings}
                     icon={<MapPin size={24} />}
                     trend="8%"
                     trendUp={true}
                 />
                 <StatsCard
                     title="Revenue"
-                    value={`₹${stats.totalRevenue}`}
+                    value={`₹${stats?.totalRevenue}`}
                     icon={<DollarSign size={24} />}
                     trend="2%"
                     trendUp={false}
